@@ -29,8 +29,8 @@ public class HistoricoServices {
     public void update( long id, Historico historico){
         try{
             var updateHistorico = this.repository.getReferenceById(id);
-            updateHistorico.setFavoraveis(historico.getFavoraveis());
-            updateHistorico.setPossiveis(historico.getPossiveis());
+            updateHistorico.setValor1(historico.getValor1());
+            updateHistorico.setValor2(historico.getValor2());
             updateHistorico.setResultado(historico.getResultado());
             this.repository.save(updateHistorico);
         }

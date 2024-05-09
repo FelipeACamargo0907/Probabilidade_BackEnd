@@ -2,7 +2,8 @@ package br.gov.sp.fatec.calculadora.dtos;
 
 
 public record HistoricoRequest(
-    double favoraveis,
-    double possiveis,
+    String tipo,
+    double valor1,
+    double valor2,
     String resultado) {
 }

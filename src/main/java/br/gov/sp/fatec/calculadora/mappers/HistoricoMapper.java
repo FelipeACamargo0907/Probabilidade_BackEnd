@@ -10,13 +10,14 @@ import br.gov.sp.fatec.calculadora.entities.Historico;
 public class HistoricoMapper {
     public static Historico toEntity(HistoricoRequest request){
         Historico historico = new Historico();
-        historico.setFavoraveis(request.favoraveis());
-        historico.setPossiveis(request.possiveis());
+        historico.setTipo(request.tipo());
+        historico.setValor1(request.valor1());
+        historico.setValor2(request.valor2());
         historico.setResultado(request.resultado());
         return historico;
     }
     public static HistoricoResponse toDTO (Historico historico){
-        return new HistoricoResponse(historico.getId(), historico.getFavoraveis(), historico.getPossiveis(), historico.getResultado());
+        return new HistoricoResponse(historico.getId(), historico.getTipo(),historico.getValor1(), historico.getValor2(), historico.getResultado());
     }
     public static List<HistoricoResponse> toDTOList(List<Historico> historico){
         return historico.stream().map(HistoricoMapper::toDTO).collect(Collectors.toList());

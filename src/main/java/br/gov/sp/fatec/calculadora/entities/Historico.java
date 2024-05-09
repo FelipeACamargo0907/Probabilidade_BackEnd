@@ -15,10 +15,12 @@ public class Historico implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "FAVORAVEIS")
-    private double favoraveis;
-    @Column(name = "POSSIVEIS")
-    private double possiveis;
+    @Column(name = "TIPO")
+    private String tipo;
+    @Column(name = "VALOR1")
+    private double valor1;
+    @Column(name = "VALOR2")
+    private double valor2;
     @Column(name = "RESULTADO")
     private String resultado;
 
@@ -30,20 +32,22 @@ public class Historico implements Serializable {
         this.id = id;
     }
 
-    public double getFavoraveis() {
-        return favoraveis;
+
+    
+    public double getValor1() {
+        return valor1;
     }
 
-    public void setFavoraveis(double favoraveis) {
-        this.favoraveis = favoraveis;
+    public void setValor1(double favoraveis) {
+        this.valor1 = favoraveis;
     }
 
-    public double getPossiveis() {
-        return possiveis;
+    public double getValor2() {
+        return valor2;
     }
 
-    public void setPossiveis(double possiveis) {
-        this.possiveis = possiveis;
+    public void setValor2(double possiveis) {
+        this.valor2 = possiveis;
     }
 
     public String getResultado() {
@@ -77,6 +81,14 @@ public class Historico implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }
